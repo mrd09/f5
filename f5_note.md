@@ -37,3 +37,36 @@
     - TMOS
     - Appliance, Chassis, Virtual Edition
     - Network: Physical, Overlay, SDN
+
+----------------------
+Day 2:
+2.1 Persistence
+- BIG-IP LTM
+- Persistence:
+    - IP: Source Address  Affinity Persistence: Support TCP UDP traffic, base on client IP: source /16...
+        + mass of IP => increase system assign resource to process
+        + Not recommend to use
+        + Use persistence record
+    - Cookies persis
+        + Method: insert, rewrite, passive
+        + No need persistence record
+    - hash mode
+
+- Cookies: 
+    + Payment 
+    + Save user information when access to server
+
+- Cookies: method insert:
+    + client -> F5 -> server: only client and F5 exchange cookies: client <-- cookies --> F5, don't care server cookies
+    1. client -- no cookies --> F5  -- no cookies --> server
+    2. client <-- insert cookies -- F5  <-- no cookies -- server
+
+- Cookies: method rewrite:
+    1. client -- no cookies --> F5  -- no cookies --> server
+    2. client <-- rewrite cookies -- F5  <-- blank cookies -- server
+                    cookies < 4Kb
+
+- Cookies: method passive:                   
+    1. client -- no cookies --> F5  -- no cookies --> server
+    2. client <-- server cookies -- F5  <-- server cookies -- server
+                    cookies < 4Kb
