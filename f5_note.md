@@ -70,3 +70,12 @@ Day 2:
     1. client -- no cookies --> F5  -- no cookies --> server
     2. client <-- server cookies -- F5  <-- server cookies -- server
                     cookies < 4Kb
+
+- Hash
+  1. Server  --- cookies --- > F5               -- server hash cookies -> Client
+                
+                               F5 hash cookies: 
+                               offset=
+                               length=
+
+- 
